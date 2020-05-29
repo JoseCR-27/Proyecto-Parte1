@@ -1,0 +1,727 @@
+//cambia los valores por defecto de la pagina y cambia el color blanco de fondo por #EEEEEE
+body, html 
+  margin: 0
+  padding: 0
+  background-color: #EEEEEE
+  scroll-behavior: smooth
+
+//Asigna a los elementos dentro de las etiquetas p la familia Nunito
+p
+  font-family: 'Nunito', sans-serif 
+
+
+//imagen de login y register
+.registerImage
+  background-image: url(./components/img/6.jpg)
+
+//Pone #304251 de background al navbar de mobile 
+.topnav-Mobile
+  background-color: #304251
+  overflow: hidden 
+  color: #ffff 
+  text-align: center
+
+//Le agrega un margen y tamaño de letra a las p dentron del topnav-mobile 
+.topnav-Mobile p
+  margin: 10px 0 10px 0
+  font-size: 4vw
+  font-family: 'Libre Baskerville', serif
+
+//Pone #8EA7AA en la topnav de celular 
+.topnav 
+  background-color: #8EA7AA
+  overflow: hidden
+
+//Style de los links en la barra de navegacion 
+.topnav a 
+  display: inline-block
+  color: #f2f2f2
+  padding: 14px 16px
+  text-decoration: none
+  font-size: 2.3vw
+  font-family: 'Nunito', sans-serif
+
+//Cambia el color de los links en hover 
+.topnav a:hover 
+  background-color: #D2E7D5
+  color: #4D6977
+
+// oculta el link que deberia abrir y cerrar el topnav en pantallas pequeñas
+.topnav .icon 
+  display: none
+  
+//Hace escalable al video 
+.responsive-iframe
+  width: 100%
+  height: 0
+  padding-bottom: 56.25%
+  position: relative 
+
+//hace al video escalable a la ventena
+.responsive-iframe iframe
+  position: absolute
+  width: 100%
+  height: 100%
+
+//los elementos a del carousel del hero se les asigna el valor de 6vw al igual que los de p
+.carousel-caption a 
+  font-size: 5vw
+  color: #ffff
+  text-decoration: underline
+  font-family: 'Libre Baskerville', serif
+.carousel-caption p
+  font-size: 2vw
+
+//Agrega el boton de top y lo coloca a la derecha abajo
+.scroll 
+  position: fixed
+  top: 90%
+  right: 0
+  margin-right: 12px
+  bottom: 100%
+  display: block
+  color: #0863B5
+  z-index: 2
+  transition-duration: 1s
+ 
+
+//Quita la decoracion que se le hace de underline cuando esta en hover
+.container a.top
+  text-decoration: none
+  
+//En el modo hover le cambia el color al background y a la letra
+.container a.top:hover 
+  color: #FF0000
+
+//Contenido de la pagina
+.content 
+  padding: 16px
+
+//Esta clase se le agrega al id de Topnav por medio del js y lo coloca en una nueva posicion al hacer scroll
+.sticky 
+  position: fixed
+  top: 0
+  z-index: 5
+  width: 100%
+
+// Agrega padding al contenido de la pagina para prevenir movimiento subitos por el nuevo acomodo del Topnav
+.sticky + .content 
+  padding-top: 102px
+
+//Le da los atributos a la entidad de select (carousel)
+.select
+  width: 30vw
+  height: 50%
+  background-color: rgba(0, 0, 0, 0)
+  .select_item
+    font-weight: 600
+    font-size: 14px
+    border-bottom: solid .5px #84a9ac
+    border-top: solid .5px #84a9ac
+    margin: 0
+    padding: 10px 0 10px 5px
+    line-height: 17px
+    .a
+      text-decoration: none
+      color: black
+      transition-duration: .2s
+      cursor: pointer
+
+//Agrega los atributos al titulo del select
+.news-Cart
+  margin-top: 6vh
+  font-weight: 600
+  font-family: 'Libre Baskerville', serif
+  color: #304251
+  
+//Cambia el color del hover de los elementos de "A" #304251 
+.a:hover
+  color: #304251 !important
+
+//Cambia la tipografia a los elementos de news
+.news-title
+  font-family: 'Libre Baskerville', serif
+
+//Aumenta el size del icono de top 
+.fa-angle-double-up
+  font-size: 2em
+
+//al landing le cambia la tipografia y el color
+.landing-h3
+  color: white
+  font-family: 'Nunito', sans-serif
+  margin-top: 3vh
+  font-size: 3.5vh
+
+//Al p de landing se le cambia el color
+.landing-p
+  color: #ffff
+  font-size: 2vh
+
+//se declara las variables del boton en el landing page
+.btn-landing
+  color: white
+  background: transparent !important
+  &:hover
+    transform: scale(1)
+    color: #204051
+    background: white !important
+
+//Se agrega un background al landing
+.background-landing
+    background:  linear-gradient(rgba(32, 64, 81, 0.8), rgba(32, 64, 81, 0.8)),  url(https://i.pinimg.com/originals/c2/c0/53/c2c053978645f1b91742296291a2d3d3.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    height: 100vh
+
+//Se amplia el icono del landing y se le agrega un margin
+.fa-exclamation-circle
+  font-size: 13vw
+  color: white
+  margin-top: 4vh
+
+//El btn more news de la pantalla de login, register y principal 
+.btn-MoreNews
+  background: #304251 !important
+  color: #ffff
+  &:hover
+    transform: scale(1)
+    color: #ffff
+    background: #4D6977 !important
+   
+
+
+//Sirve para que estos ajustes se activen en pantallas menores o igual a 600px
+@media screen and (max-width: 600px)
+  //hace que se coloque en display none a todos los elementos del topnav a falta del primero de todos
+  .topnav a:not(:first-child) 
+    display: none
+
+  //coloca el .icon en pantalla y a la deracha del topnav
+  .topnav a.icon 
+    float: right
+    display: block
+  
+  //Evita que .icon se salga de el nav de topnav al hacer a este relativo
+  .topnav 
+    position: relative
+    border-color: #0000
+  
+  //agrega la clase responsive a .icon para hacerla atractiva en celulares pequeños de manera vertical
+  .topnav.responsive a.icon 
+    position: absolute
+    right: 0
+    top: 0
+  
+  //hace que 
+  .topnav.responsive a 
+    float: none
+    display: block
+    text-align: left
+  
+  //desaparece el g-news que se usa en el menu de table o computadora
+  .g-news
+    display: none
+  
+  //pone las imagenes en linea y las centra
+  .slider
+    position: relative
+    width: 100%
+    margin: 0
+    padding: 0
+    display: flex
+    align-items: center
+    overflow: hidden
+    background: #00000000
+
+  //posiciona la imaganes en pantalla y deja solo una  
+  .slide
+    position: relative
+    min-width: 100%
+    height: 100%
+    overflow: hidden
+
+  //sirve para reescalar la imagen en pantallas mobiles
+  .slider img 
+    max-width: 100%
+    max-height: 100vh
+    height: auto
+  
+  //Desaparece el texto de la imagen de la version mobile
+  .carousel-caption
+    display: none
+  
+  //quita el icono de login de la version de movil
+  .topnav a.login
+    display: none
+
+  //NEWS
+  .news-title
+    font-size: 4vh
+  .img-thumbnail
+    display: none
+  .news-content
+    font-size: 2vh
+ 
+  
+  //En la version de mobile de login y register desaparece la imagen
+  .registerImage
+    display: none
+  
+  //aunmenta el tamaño de la letra del boton top
+  .container a.scroll
+    font-size: 3vw
+  
+  //Coloca el boton de top a 75% de la pantalla siendo 0 arriba 
+  .scroll
+    top: 75%
+  
+  //Quita el select de la version de celular
+  .select
+    display: none
+
+  //Hace que el tamaño de la columna se ajuste al de la pantalla
+  .col-8 
+    flex: 0 0 100%
+    max-width: 100%
+
+  //Crea un espacio entre la imagen y el texto de la noticia
+  .container-fluid
+    margin-top: 3vh
+  
+  //Se le agrega un margin en la version de celular
+  .btn-MoreNews
+    margin-top: 3vh
+  .news-Cart
+    display: none
+
+//Sirve para que estos ajustes se activen en pantallas mayores o igual a 601px 
+@media screen and (min-width: 601px) and (max-width: 1280px)
+  //Quita el nav de la version de mobile
+  .topnav-Mobile
+    display: none
+
+  //Al topnav le cambia los valores 
+  .topnav 
+    background-color: #304251
+    overflow: hidden
+    border: none
+    text-align: center
+  
+  //le asigna diseño a g-news 
+  .g-news 
+    background-color: #304251
+    overflow: hidden
+    float: left
+    border: none
+  
+  //le asigna al titulo G-News los valores 
+  .g-news p 
+    color: #f2f2f2
+    margin: 14px 16px
+    font-size: 2.3vw
+    font-family: 'Libre Baskerville', serif
+  
+  //A las a de topnav les cambia el tipo de letra y lo centras
+  .topnav a
+    font-family: 'Nunito', sans-serif
+    text-align: center
+  
+  //al login del topnav lo coloca a la derecha y le asigna un tamaño de letra
+  .topnav a.login
+    float: Right
+    font-size: 2.3vw
+  
+  //hace al hover de topnav de los elementos a transparente y lo hace blanco a las palabras
+  .topnav a:hover
+    background: rgba(0,0,0,0)
+    color: #ffff
+
+  //le quita el default de decorarion y lo posiciona relative
+  .hover-border
+    text-decoration: none
+    position: relative
+  
+  //inserta despues del hover border, atributos para crear una linea
+  .hover-border::after
+    content: ''
+    width: 0%
+    height: 7px
+    background-color: #D2E7D5
+    position: absolute
+    bottom: 0%
+    left: 50%
+    border-radius: 10px
+    transition: all 500ms ease
+
+  //posiciona la linea debajo del texto y la pone con el width del 100%
+  .hover-border:hover::after
+    left: 0%
+    width: 100%
+  
+  //le quita el default de decorarion y lo posiciona relative
+  .topnav a.active
+    text-decoration: none
+    position: relative
+  
+  //inserta despues del active de a atributos para crear una linea estatica
+  .topnav a.active:after
+    content: ''
+    width: 0%
+    height: 7px
+    background-color: #D2E7D5
+    position: absolute
+    bottom: 0%
+    left: 50%
+    border-radius: 10px
+  
+  //posiciona la linea debajo del texto y la pone con el width del 100%
+  .topnav a.active::after
+    left: 0%
+    width: 100%
+  
+  //le quita el default de decorarion y lo posiciona relative
+  .hover-border-login
+    text-decoration: none
+    position: relative
+  
+  //inserta despues del hover-border-login atributos para crear una animacion de linea 
+  .hover-border-login::after
+    content: ''
+    width: 0%
+    height: 7px
+    background-color: #8EA7AA
+    position: absolute
+    bottom: 0%
+    left: 50%
+    border-radius: 10px
+    transition: all 500ms ease
+
+  //posiciona la linea debajo del texto y la pone con el width del 100% 
+  .hover-border-login:hover::after
+    left: 0%
+    width: 100%
+
+  //posiciona las imagenes del slider en linea y las oculta
+  .slider
+    position: relative
+    width: 100%
+    margin: 0
+    padding: 0
+    display: flex
+    align-items: center
+    overflow: hidden
+    background: #00000000
+
+  //realiza la animacion del slider 
+  .slide
+    position: relative
+    min-width: 100%
+    height: 100%
+    overflow: hidden
+    animation: 20s slider infinite alternate
+
+  //hace que el tamaño completo de la imagen cuando se abra en tamaño completo sea del de la pantalla y lo reescala segun el tamaño
+  .slider img 
+    max-width: 100%
+    max-height: 100vh
+    height: auto
+  
+  //agrega una gradiante inferior negra transparente a las imagenes del slider
+  .gradient-overlay
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(180deg, rgba(255,0,0,0) 24%, rgba(0,0,0,1) 77%)
+      opacity: .9
+  
+  //Quita el login de mobile de PC
+  .topnav a.loginPC
+    display: none
+
+  //Es los 20 segundos divididos en porcentajes y para mover la imagen hacia la izquierda
+  @keyframes slider
+    0%
+      left: 0
+    20%
+      left: 0 
+    25%
+      left: -100%
+    45%
+      left: -100%
+    50%
+      left: -200%
+    70%
+      left: -200%
+    75%
+      left: -300%
+    100%
+      left: -300%
+  
+  //Al atributo img-info se le coloca hacia la izquierda
+  .img-info
+    text-align: left
+
+  //Al las h2 se las pone en uppercase y se les cambia el tamaño
+  .img-info h2
+    font-size: 4.3vw
+    text-transform: uppercase
+
+  //Al las p se les cambia el tamaño
+  .img-info p
+    font-size: 2.7vw
+  
+  .responsive-iframe
+    float: right
+
+  //pone los tamaños de el video en 80%
+  .responsive-iframe iframe
+    position: absolute
+    width: 80%
+    height: 80%
+  
+  //Cambia el color del a de hover del hero
+  .carousel-caption a:hover
+    color: #D2E7D5
+
+  //Aumenta el tamaño de la letra del boton top
+  .container a.scroll
+    font-size: 2vw
+  
+  //Crea un espacio entre el hero y la noticia
+  .container-fluid
+    margin-top: 3vh
+  
+  
+
+@media screen and (min-width: 1281px)
+  //Quita el nav de la version de mobile
+  .topnav-Mobile
+    display: none
+  //Al topnav le cambia los valores 
+  .topnav 
+    background-color: #304251
+    overflow: hidden
+    border: none
+    text-align: center
+  
+  //le asigna diseño a g-news 
+  .g-news 
+    background-color: #304251
+    overflow: hidden
+    float: left
+    border: none
+
+  //le asigna al titulo G-News los valores 
+  .g-news p 
+    color: #f2f2f2
+    margin: 14px 16px
+    font-size: 2.3vw
+    font-family: 'Libre Baskerville', serif
+  
+  //al login del topnav lo coloca a la derecha y le asigna un tamaño de letra
+  .topnav a.login::before
+    float: Right
+    margin-left: 10px
+  
+  //Al atributo img-info se le coloca hacia la izquierda
+  .img-info
+    text-align: left
+
+  //Al las h2 se las pone en uppercase y se les cambia el tamaño
+  .img-info h2
+    font-size: 4.3vw
+    text-transform: uppercase
+
+
+  //Al las p se les cambia el tamaño
+  .img-info p
+    font-size: 2.7vw
+  
+  //posiciona las imagenes del slider en linea y las oculta
+  .slider
+    position: relative
+    width: 100%
+    margin: 0
+    padding: 0
+    display: flex
+    align-items: center
+    overflow: hidden
+    background: #00000000
+
+
+  //realiza la animacion del slider 
+  .slide
+    position: relative
+    min-width: 100%
+    height: 100%
+    overflow: hidden
+    animation: 20s slider infinite alternate
+
+  //hace que el tamaño completo de la imagen cuando se abra en tamaño completo sea del de la pantalla y lo reescala segun el tamaño
+  .slider img 
+    max-width: 100%
+    max-height: 100vh
+    height: auto
+
+  
+  //agrega una gradiante inferior negra transparente a las imagenes del slider
+  .gradient-overlay
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(180deg, rgba(255,0,0,0) 24%, rgba(0,0,0,1) 77%)
+      opacity: .7
+
+  //Es los 20 segundos divididos en porcentajes y para mover la imagen hacia la izquierda
+  @keyframes slider
+    0%
+      left: 0
+    20%
+      left: 0 
+    25%
+      left: -100%
+    45%
+      left: -100%
+    50%
+      left: -200%
+    70%
+      left: -200%
+    75%
+      left: -300%
+    100%
+      left: -300%
+  
+  //al login del topnav lo coloca a la derecha y le asigna un tamaño de letra
+  .topnav a.login
+    float: Right
+    font-size: 1vw
+  
+  //Hace mas pequeño los datos del navbar
+  .topnav a
+    font-size: 1vw
+  .g-news p 
+    font-size: 1vw
+    font-family: 'Libre Baskerville', serif
+  
+  //Desaparece Login de la vista mayor
+  .topnav a.loginPC
+    display: none
+  
+  //Reduce el tamaño de los datos de la notica en el hero
+  .carousel-caption a
+    font-size: 3.5vw
+  .carousel-caption p
+    font-size: 1.6vw
+  
+  //Cambia el color del a de hover del hero
+  .carousel-caption a:hover
+    color: #D2E7D5
+ 
+  //Hace que el video sea mas pequeño dentro del container
+  //Hace escalable al video 
+  .responsive-iframe
+    width: 100%
+    height: 0
+    padding-bottom: 56.25%
+    position: relative 
+
+  //pone los tamaños de el video en 80%
+  .responsive-iframe iframe
+    position: absolute
+    width: 80%
+    height: 80%
+
+  //hace al jover de topnav de los elementos a transparente y lo hace blanco a las palabras
+  .topnav a:hover
+    background: rgba(0,0,0,0)
+    color: #ffff
+  
+  //le quita el default de decorarion y lo posiciona relative
+  .hover-border
+    text-decoration: none
+    position: relative
+
+  //inserta despues del hover border, atributos para crear una linea
+  .hover-border::after
+    content: ''
+    width: 0%
+    height: 7px
+    background-color: #D2E7D5
+    position: absolute
+    bottom: 0%
+    left: 50%
+    border-radius: 10px
+    transition: all 500ms ease
+
+  //posiciona la linea debajo del texto y la pone con el width del 100%
+  .hover-border:hover::after
+    left: 0%
+    width: 100%
+
+  //le quita el default de decorarion y lo posiciona relative
+  .topnav a.active
+    text-decoration: none
+    position: relative
+  
+  //inserta despues del active de a atributos para crear una linea estatica
+  .topnav a.active:after
+    content: ''
+    width: 0%
+    height: 7px
+    background-color: #D2E7D5
+    position: absolute
+    bottom: 0%
+    left: 50%
+    border-radius: 10px
+  
+  //posiciona la linea debajo del texto y la pone con el width del 100%
+  .topnav a.active::after
+    left: 0%
+    width: 100%
+  
+  //le quita el default de decorarion y lo posiciona relative
+  .hover-border-login
+    text-decoration: none
+    position: relative
+  
+  //inserta despues del hover-border-login atributos para crear una animacion de linea 
+  .hover-border-login::after
+    content: ''
+    width: 0%
+    height: 7px
+    background-color: #8EA7AA
+    position: absolute
+    bottom: 0%
+    left: 50%
+    border-radius: 10px
+    transition: all 500ms ease
+
+  //posiciona la linea debajo del texto y la pone con el width del 100% 
+  .hover-border-login:hover::after
+    left: 0%
+    width: 100%
+
+  //Quita el boton de top del menu de escritorio 
+  .container a.scroll 
+    display: none
+  
+  //Limita el tamaño del hover en la pantalla grande
+  .select
+    width: 300px
+
+  //Coloca el texto de News separdo del hover
+  .container-fluid
+    margin-top: 3vh
+  
+  
